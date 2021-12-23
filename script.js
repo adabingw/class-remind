@@ -188,16 +188,6 @@ function showClass(h, m, week, count) {
   }
 }
 
-// function run(week, weekLen) {
-//   while(!window.closed) {
-//     sleep(1000);
-//     var d = new Date().toLocaleTimeString('en-US', { timeZone: 'America/Toronto'}); // for now
-//     for (var i = 0; i < weekLen; i++) {
-//       if ()
-//     }
-//   }
-// }
-
 // check which classes are almost gonna start
 function almost_start(h, m, week, count) {
   for(var i = 0; i < count; i++) {
@@ -272,36 +262,32 @@ function convert24(date, h) {
   }
 }
 
-// we wait
-function sleep(milliseconds) {
-  const date = Date.now();
-  let currentDate = null;
-  do {
-    currentDate = Date.now();
-  } while (currentDate - date < milliseconds);
-}
-  
-console.log(Notification.permission);
-notify();
 
-function showNotification() {
-    var notification = new Notification("New message!", {
-    	body: "yeet yeet"
-    });
-}
+// for some sad reason the notifs are not permed so doesn't work :(
 
-function notify() {
-  if (Notification.permission !== "granted") {
-        Notification.requestPermission();
-        Notification.requestPermission().then(function(permission) { console.log('permiss', permission)});
-    }
-    else {
-        showNotification();
-        notification.onclick = function () {
-            window.open("http://google.com");
-        };
-    }
-}
+// console.log(Notification.permission);
+// notify();
+
+// function showNotification() {
+//     var notification = new Notification("New message!", {
+//     	body: "yeet yeet"
+//     });
+// }
+
+// function notify() {
+//   if (Notification.permission !== "granted") {
+//         // Notification.requestPermission();
+//         Notification.requestPermission();
+// 				console.log('permiss', permission);
+//   }
+//   else {
+//         showNotification();
+//         notification.onclick = function () {
+//             window.open("http://google.com");
+//         };
+//     }
+// }
+
 
 // get length of Classes array because .length doesn't work for some reason
 function getSize(week) {
