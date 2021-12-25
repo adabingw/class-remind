@@ -102,12 +102,14 @@ switch(dayOfTheWeek) {
     for (var j = 0; j < count; j++) {
       console.log(arrDays[j].name);
     }
-    var d = new Date().toLocaleTimeString('en-US', { timeZone: 'Asia/Jakarta'}); // for now
+    var d = new Date().toLocaleTimeString('en-US', { timeZone: 'America/Toronto'}); // for now
     // console.log(d);
     var h = getHour(d);
     var m = getMinute(d);
+    showClass(h, m, arrDays, count);
     almost_start(h, m, arrDays, count);
     almost_end(h, m, arrDays, count);
+    // notify();
     break;
   case 2:
     var w = whichWeek();
@@ -120,8 +122,10 @@ switch(dayOfTheWeek) {
     // console.log(d);
     var h = getHour(d);
     var m = getMinute(d);
+    showClass(h, m, arrDays, count);
     almost_start(h, m, arrDays, count);
     almost_end(h, m, arrDays, count);
+    // notify();
     break;
   case 3:
     var w = whichWeek();
@@ -134,8 +138,10 @@ switch(dayOfTheWeek) {
     // console.log(d);
     var h = getHour(d);
     var m = getMinute(d);
+    showClass(h, m, arrDays, count);
     almost_start(h, m, arrDays, count);
     almost_end(h, m, arrDays, count);
+    // notify();
     break;
   case 4:
     var w = whichWeek();
@@ -164,10 +170,14 @@ switch(dayOfTheWeek) {
     // console.log(d);
     var h = getHour(d);
     var m = getMinute(d);
+    showClass(h, m, arrDays, count);
     almost_start(h, m, arrDays, count);
     almost_end(h, m, arrDays, count);
+    // notify();
     break;
   default:
+    var heading = document.getElementById("next");
+    heading.innerHTML = "Relax, it's the weekend!";
     break;
 }
 
